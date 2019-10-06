@@ -1,0 +1,51 @@
+  *******************************************
+  *                                         *
+  *        W E L C O M E  to  R O O T       *
+  *                                         *
+  *   Version   5.32/00   2 December 2011   *
+  *                                         *
+  *  You are welcome to visit our Web site  *
+  *          http://root.cern.ch            *
+  *                                         *
+  *******************************************
+
+ROOT 5.32/00 (branches/v5-32-00-patches@42372, Apr 26 2012, 14:56:00 on linuxx8664gcc)
+
+CINT/ROOT C/C++ Interpreter version 5.18.00, July 2, 2010
+Type ? for help. Commands must be C++ statements.
+Enclose multiple statements between { }.
+
+Processing macro/ana.C+...
+Info in <TUnixSystem::ACLiC>: creating shared library /afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana_C.so
+In file included from /afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana_C_ACLiC_dict.h:34:0,
+                 from /afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana_C_ACLiC_dict.cxx:17:
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:15:54: error: default argument for 'TString ds' has type 'const char [7]'
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:15:54: error: default argument for 'TString physics' has type 'const char [6]'
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C: In function 'void ana(TString, TString)':
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:15:6: error: 'ds' has incomplete type
+/afs/cern.ch/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms6/include/Rtypes.h:51:7: error: forward declaration of 'struct TString'
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:15:6: error: 'physics' has incomplete type
+/afs/cern.ch/cms/slc5_amd64_gcc462/lcg/root/5.32.00-cms6/include/Rtypes.h:51:7: error: forward declaration of 'struct TString'
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:17:3: error: 'gSystem' was not declared in this scope
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:23:3: error: 'gROOT' was not declared in this scope
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:29:3: error: 'TChain' was not declared in this scope
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:29:11: error: 'chain' was not declared in this scope
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:29:23: error: expected type-specifier before 'TChain'
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:29:23: error: expected ';' before 'TChain'
+In file included from /afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana_C_ACLiC_dict.h:34:0,
+                 from /afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana_C_ACLiC_dict.cxx:17:
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:34:3: error: 'SusyEventAnalyzer' was not declared in this scope
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:34:22: error: 'sea' was not declared in this scope
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:34:32: error: expected type-specifier before 'SusyEventAnalyzer'
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:34:32: error: expected ';' before 'SusyEventAnalyzer'
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:51:3: error: 'TStopwatch' was not declared in this scope
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:51:14: error: expected ';' before 'ts'
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:53:3: error: 'ts' was not declared in this scope
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:59:3: error: 'cout' is not a member of 'std'
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:59:69: error: 'endl' is not a member of 'std'
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:60:3: error: 'cout' is not a member of 'std'
+/afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana.C:60:68: error: 'endl' is not a member of 'std'
+c++: error: /afs/cern.ch/user/a/azzolini/scratch0/CMSSW_5_2_5/src/SusyAnalysis/SusyNtuplizer/./macro/ana_C_ACLiC_dict.o: No such file or directory
+Error in <ACLiC>: Compilation failed!
+Error: Function ana() is not defined in current scope  :0:
+*** Interpreter error recovered ***

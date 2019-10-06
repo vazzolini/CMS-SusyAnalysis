@@ -1,0 +1,6 @@
+for 525 release, check out the following packages:
+
+cvs co -r V00-00-07 RecoMET/METFilters
+cvs co -r V00-00-17 -d EGamma/EGammaAnalysisTools UserCode/EGamma/EGammaAnalysisTools
+addpkg CommonTools/ParticleFlow V00-03-10
+addpkg RecoParticleFlow/PFProducer  V15-01-08

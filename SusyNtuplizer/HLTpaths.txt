@@ -1,0 +1,50 @@
+First off, figure out what kind of L1 seed is used.  It's very near the start of the path (hltL1s...) and you can see it also in the summary you listed.  
+This lets you know if your pre-HLT efficiency is 100% (EG) or not (muons).  That's the easy part.
+
+For muons, it's mostly still pretty easy.  
+I would say anything with "MuX" is "basic muon reconstruction at the HLT", starting from an L1 seed, reconstructing using the muon chambers, then proceeding to tracker with a few pT and quality cuts along the way.  Most are pretty basic, so if you look through that once you'll get an idea.  
+"IsoMuX" is one step higher, starting from the MuX of before and then adding combined Calo+Tracker isolation.  For the exact parameters you'll have to dig into the paths or talk with a muon expert.  I intentionally remain blissfully ignorant.  :)
+
+For electrons, the backgrounds are higher so you have to get clever.  Each electron trigger usually has a set of standard quality cuts that can be applied.  
+You can talk to Matteo Sani about this, but the EG POG probably has a twiki somewhere documenting things.  
+Basic decoding:
+  - CaloId: Cluster shape in ECAL, and I think H/E might be applied.  Various levels from very loose (VL) to very tight (VT).  These cuts are usually "safe", i.e. the online values match well to offline values.
+  - CaloIso: ECAL and HCAL isolation are computed in the trigger.  I get a little more concerned about these because they don't map as well to offline quantities.
+  - TrkId: Take a look at the delta eta and delta phi track-ECAL cluster matching.  Full tracking is normally not done in the HLT, so these variables will not perfectly match to offline quantities.  The looser you get them, the better.
+  - TrkIso: Probably self-explanatory at this point.  :)
+
+The key pieces to understand in each trigger path are the filters.  These modules have to live outside of sequences so they will appear as "hlt..." in the long list of modules.  I generally treat each HLT sequence as "something somebody decided was good for HLT reconstruction" and focus only on the filters themselves.  Based on what I've told you, I suspect that you could guess most of what is being done at this point for a given path
+
+
+
+MuEG													
+	HLT_DoubleMu5_Ele8_CaloIdT_TrkIdVL_v14			1	1	1	1	1	1	1	1	0	0	L1_DoubleMu3p5_EG5
+	HLT_DoubleMu8_Ele8_CaloIdT_TrkIdVL_v3			1	1	1	1	1	1	1	1	0	0	L1_DoubleMu3p5_EG5 OR L1_DoubleMu5_EG5
+	HLT_Mu17_Ele8_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_v7	1	1	1	1	1	1	1	1	0	0	L1_Mu12_EG7
+	HLT_Mu22_Photon22_CaloIdL_v5				1	1	1	1	1	1	1	1	0	0	L1_Mu3p5_EG12
+	HLT_Mu30_Ele30_CaloIdL_v6				1	1	1	1	1	1	1	1	0	0	L1_Mu3p5_EG12
+	HLT_Mu7_Ele7_CaloIdT_CaloIsoVL_v5			0	0	0	0	0	0	0	0	1	0	L1_MuOpen_EG5
+	HLT_Mu8_DoubleEle8_CaloIdT_TrkIdVL_v5			1	1	1	1	1	1	1	1	0	0	L1_Mu5_DoubleEG5 OR L1_Mu5_DoubleEG6
+	HLT_Mu8_Ele17_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_v7	1	1	1	1	1	1	1	1	0	0	L1_Mu3p5_EG12 OR L1_MuOpen_EG12
+	HLT_Mu8_Ele8_CaloIdT_TrkIdVL_Ele8_CaloIdL_TrkIdVL_v5	1	1	1	1	1	1	1	1	0	0	L1_Mu5_DoubleEG5 OR L1_Mu5_DoubleEG6
+	
+
+
+
+
+path HLT_DoubleMu5_Ele8_CaloIdT_TrkIdVL_v14 = 
+
+HLTBeginSequence + 
+hltL1sL1DoubleMu3p5EG5 + 
+hltPreDoubleMu5Ele8CaloIdTTrkIdVL + 
+hltL1DoubleMu3p5EG5L1DiMuFiltered0 + 
+HLTL2muonrecoSequence + 
+hltL1DoubleMu3p5EG5L2DiMuFiltered3p5 + 
+HLTL3muonrecoSequence + 
+hltL1DoubleMu3p5EG5L3DiMuFiltered5 + 
+HLTDoubleMu5Ele8L1NonIsoHLTCaloIdTTrkIdVLSequence + 
+HLTEndSequence
+
+
+
+
